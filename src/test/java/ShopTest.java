@@ -72,4 +72,33 @@ public class ShopTest {
         assertEquals(1, shop.getStock().size());
     }
 
+
+    @Test
+    public void canCalculateMarkup() {
+
+        // Add three items to stock and confirm that they have been added.
+        shop.addItem(guitar);
+        shop.addItem(item);
+        shop.addItem(trumpet);
+
+        double guitarMarkup = shop.getStock().get(0).calculateMarkup();
+
+        assertEquals(99.99, guitarMarkup, 0.01);
+
+    }
+
+
+    @Test
+    public void canCalculateTotalPotentialShopProfit() {
+        // Add three items to stock and confirm that they have been added.
+        shop.addItem(guitar);
+        shop.addItem(item);
+        shop.addItem(trumpet);
+
+        double totalPotentialProfit = shop.potentialShopProfit();
+
+        assertEquals(182.72, totalPotentialProfit, 0.01);
+    }
+
+
 }
