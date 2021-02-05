@@ -62,4 +62,8 @@ public class TrumpetTest {
         assertEquals("Brass", trumpet.getColour());
     }
 
+    @Test
+    public void canPlayTrumpet() {
+        assertEquals("Screech!", trumpet.play());
+    }
 }
